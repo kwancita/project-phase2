@@ -11,6 +11,8 @@ function App() {
     fetch("http://localhost:3000/products")
     .then(res=>res.json())
     .then(setItems)
+    
+  
   },[])
 
   function handleAdd(product){
