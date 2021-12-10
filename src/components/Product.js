@@ -13,10 +13,12 @@ const Product = ({items, handleAdd, setSearch, setSelectedCategory}) => {
 
     return (
         <div>
+            
             <Filter setSearch={setSearch} onCategoryChange={handleCategoryChange} onSearchChange={handleSearch}/>
+            
             <div className="products">
             {items.map((item)=> (
-                <div className ="card">
+                <div className ="card" key={item.id}>
                     <div >
                         <img 
                             className="product-image"

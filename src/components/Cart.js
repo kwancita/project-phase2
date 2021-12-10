@@ -27,14 +27,14 @@ const Cart = ({cartItem, handleAdd, handleRemove,handleClearCart}) => {
                     />
                     <div className="cart-items-name" >{item.name}</div>
                     <div className="cart=items-function">
-                        <button
-                            className="cart-items-add"
-                            onClick={()=> handleAdd(item)}   
-                        >+</button>
                         <button 
                             className="cart-items-remove"
                             onClick={()=> handleRemove(item)} 
                         >-</button>
+                        <button
+                            className="cart-items-add"
+                            onClick={()=> handleAdd(item)}   
+                        >+</button>
                     </div>
                     <div className="cart-items-price">
                         {item.quantity}*${item.price}

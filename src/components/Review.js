@@ -7,10 +7,13 @@ const Review = () => {
     useEffect(()=>{
         fetch("http://localhost:8000/reviews")
         .then(res=>res.json())
-        .then(localStorage.setReview)
+        .then(data => {
+            setReview(data)
+        })
     },[])
-
+    
     function handleSubmit(newReview){
+        debugger;
         setReview([...reviews, newReview])
       }
 
@@ -19,7 +22,7 @@ const Review = () => {
             <ReviewForm handleSubmit={handleSubmit} />
             <div className="comments-container">
             {reviews.map(review => (
-               <div className="comment-card">
+               <div className="comment-card" key={review.id}>
                    <div><h3 className="name">{review.user}</h3></div>
                    <div className="userReview"><p>{review.review}</p></div>
                </div>
