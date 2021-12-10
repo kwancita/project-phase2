@@ -6,6 +6,8 @@ import {BrowserRouter as Router} from 'react-router-dom'
 function App() {
   const [items, setItems] = useState([])
   const [cartItem, setCart] = useState([])
+  const [search, setSearch] = useState("")
+  const [selectedCategory, setSelectedCategory] = useState("All")
 
   useEffect(()=>{
     fetch("http://localhost:8000/products")
@@ -39,6 +41,16 @@ function App() {
     }
   }
 
+  const display = items
+    .filter((item) => {
+      if ( selectedCategory === "All"){
+        return true;
+      }else{
+        return item.product_type === selectedCategory;
+      } 
+    })
+    .filter((item) => item.name.toLowerCase().includes(search.toLowerCase()));
+
   function handleClearCart(){
     setCart([])
   }
@@ -48,11 +60,13 @@ function App() {
       <Router>
         <Header cartItem={cartItem}/>
         <Routes 
-          items={items} 
+          items={display} 
           cartItem={cartItem} 
           handleAdd={handleAdd}
           handleRemove={handleRemove}
           handleClearCart={handleClearCart}
+          setSearch={setSearch}
+          setSelectedCategory={setSelectedCategory}
           />
       </Router>
     </div>

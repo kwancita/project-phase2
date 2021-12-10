@@ -4,12 +4,12 @@ import Review from './Review'
 import Cart from './Cart'
 import {Route, Switch} from 'react-router-dom'
 
-function Routes({items,cartItem, handleAdd, handleRemove,handleClearCart}){
+function Routes({items,cartItem, handleAdd, handleRemove,handleClearCart, setSearch, setSelectedCategory}){
     return(
         <div>
             <Switch>
                 <Route path="/" exact >
-                    <Product items={items} handleAdd={handleAdd} />
+                    <Product items={items} handleAdd={handleAdd} setSearch={setSearch} setSelectedCategory={setSelectedCategory} />
                 </Route>
                 <Route path="/review" exact >
                     <Review />
