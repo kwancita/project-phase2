@@ -1,6 +1,6 @@
 import React from 'react'
 import Product from './Product'
-import Signup from './Signup'
+import Review from './Review'
 import Cart from './Cart'
 import {Route, Switch} from 'react-router-dom'
 
@@ -11,8 +11,8 @@ function Routes({items,cartItem, handleAdd, handleRemove,handleClearCart}){
                 <Route path="/" exact >
                     <Product items={items} handleAdd={handleAdd} />
                 </Route>
-                <Route path="/signup" exact >
-                    <Signup />
+                <Route path="/review" exact >
+                    <Review />
                 </Route>
                 <Route path="/cart" exact >
                     <Cart 

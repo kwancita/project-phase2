@@ -19,7 +19,7 @@ function Header({cartItem}){
                 </ul>
                 <ul>
                     <li>
-                        <Link to="/signup">Review</Link>
+                        <Link to="/review">Review</Link>
                     </li>
                 </ul>
                 <ul>
