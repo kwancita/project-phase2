@@ -73,6 +73,7 @@
   min-height: 150;
   display: block;
   object-fit: cover;
+  margin:auto
 }
 
 .product-name{
@@ -100,7 +101,7 @@
   display: block;
   cursor: pointer;
   text-transform: uppercase;
-  margin: 15px auto;
+  margin: 15px, auto;
 }
 
 .product-add:hover{
@@ -112,20 +113,6 @@
   transform: translateY(3px);
 }
 
-/* signup css */
-.signup{
-  margin: 0 auto;
-  width: 80%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: violet;
-  color: white;
-  margin-top: 30px;
-  height: 60vh;
-  font-size: 20px;
-  font-weight: 700;
-}
 
 /* cart css */
 .cart-items{
@@ -143,6 +130,7 @@
   font-size: 20px;
   height: 50px;
   border-bottom: 2px solid rgb(223, 206, 109);
+  color: rgb(59, 59, 59);
 }
 
 .cart-items-empty{
@@ -153,6 +141,7 @@
   font-weight: 700;
   padding-top: 20px;
   padding-bottom: 20px;
+  color: rgb(59, 59, 59);
 }
 
 .cart-items-image{
@@ -171,11 +160,13 @@
   font-size: 20px;
   font-weight: 700;
   margin-left: 5%;
+  color: rgb(59, 59, 59);
 }
 
 .cart-items-name,
 .cart-item-function{
-  width: 25%
+  width: 25%;
+  color: rgb(59, 59, 59);
 }
 
 .cart-items-add,
@@ -210,11 +201,13 @@
   font-size: 20px;
   font-weight: 700;
   border-top: 2px solid rgb(223, 206, 109);
+  color: rgb(59, 59, 59);
 }
 
 .cart-items-total-price{
   display: flex;
   padding-left: 35%;
+  color: rgb(59, 59, 59);
 }
 
 .clear-cart{
@@ -222,6 +215,7 @@
   justify-content: flex-end;
   margin-top:10px;
   margin-right:10px;
+  color: rgb(59, 59, 59);
 }
 
 .clear-cart-button{
@@ -249,4 +243,55 @@
   font-size: 14px;
   font-weight: 700;
   vertical-align: super;
+}
+
+/* form css */
+.comments-form-container {
+  text-align: center;
+  padding-top: 50px;
+  color: rgb(59, 59, 59);
+}
+
+input[type="text"]:not(.edit-input) {
+  padding: 10px;
+  border: 0;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+  padding: 12px 20px;
+  margin: 8px 0;
+  width: 500px;
+}
+
+input[type="submit"] {
+  background-color: violet;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  margin-left: 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: aquamarine;
+}
+
+.comments-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.comment-card {
+  border: solid;
+  border-color: #ffcb05;
+  padding: 50px;
+  box-shadow: 0 4px 8px 0 violet;
+  transition: 0.3s;
+  margin: 30px;
+  float: left;
+  text-align: center;
+  width: auto;
+  height: auto;
+  color: rgb(59, 59, 59);
 }
