@@ -5,36 +5,47 @@ import {BrowserRouter as Router} from 'react-router-dom'
 
 function App() {
   const [items, setItems] = useState([])
-  const [cartItem, setCart] = useState([])
+  const [cartItem, setCart] = useState(localStorage.getItem("cart") ? JSON.parse(localStorage.getItem("cart")) : [])
   const [search, setSearch] = useState("")
   const [selectedCategory, setSelectedCategory] = useState("All")
+
 
   useEffect(()=>{
     fetch("http://localhost:8000/products")
     .then(res=>res.json())
     .then(setItems)
-  //if
   },[])
+
+  function setAllCartVariables(value) {
+    setCart(value)
+    localStorage.setItem("cart", JSON.stringify(value))
+  }
 
   function handleAdd(product){
     const inCart = cartItem.find((item)=> item.id === product.id);
     if(inCart){
-      setCart(
-        cartItem.map((item)=>
-          item.id === product.id?{...inCart, quantity: inCart.quantity+1}:item
-        )
-      )
+      const newCartItem = cartItem.map((item)=>
+      item.id === product.id?{...inCart, quantity: inCart.quantity+1}:item
+    )
+      setAllCartVariables(newCartItem)
+      // setCart(newCartItem)
+      // localStorage.setItem("cart", JSON.stringify(newCartItem))
     }else{
-      setCart([...cartItem, {...product, quantity:1}])
+      const newCartItem2 = [...cartItem, {...product, quantity:1}]
+      // setCart(newCartItem2)
+      // localStorage.setItem("cart", JSON.stringify(newCartItem2))
+      // console.log(localStorage.getItem("cart"))
+      setAllCartVariables(newCartItem2)
     }
+
   }
 
   function handleRemove(product){
     const inCart = cartItem.find((item)=> item.id === product.id);
     if (inCart.quantity ===1){
-      setCart(cartItem.filter((item)=>item.id !== product.id));
+      setAllCartVariables(cartItem.filter((item)=>item.id !== product.id));
     }else{
-      setCart(
+      setAllCartVariables(
         cartItem.map((item)=>item.id === product.id? 
         {...inCart, quantity:inCart.quantity-1}:item)
       )
@@ -52,7 +63,7 @@ function App() {
     .filter((item) => item.name.toLowerCase().includes(search.toLowerCase()));
 
   function handleClearCart(){
-    setCart([])
+    setAllCartVariables([])
   }
 
   return (

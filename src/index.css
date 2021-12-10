@@ -335,5 +335,11 @@ input {
   min-width: 120px;
 }
 
+/* detail css */
+.btn{
+ background-color:rgb(253, 244, 163);
+ border-radius: 5px;
+ border:2px solid violet;
+}
 
 
