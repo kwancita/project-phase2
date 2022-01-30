@@ -10,7 +10,7 @@ const ReviewForm = ({handleSubmit}) => {
         user:user,
         review:newReview
         }
-        fetch("http://localhost:8000/reviews",{
+        fetch("http://localhost:3000/reviews",{
         method: "POST",
         headers: {
             "Content-Type":"application/json"

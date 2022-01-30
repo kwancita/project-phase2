@@ -37,7 +37,7 @@ const Cart = ({cartItem, handleAdd, handleRemove,handleClearCart}) => {
                         >+</button>
                     </div>
                     <div className="cart-items-price">
-                        {item.quantity}*${item.price}
+                        {item.quantity} * ${item.price}
                     </div>
                 </div>
                 ))}

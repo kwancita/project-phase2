@@ -11,7 +11,7 @@ function App() {
 
 
   useEffect(()=>{
-    fetch("http://localhost:8000/products")
+    fetch("http://localhost:3000/products")
     .then(res=>res.json())
     .then(setItems)
   },[])

@@ -12,7 +12,7 @@ function Filter({ search, onCategoryChange, onSearchChange }) {
                 onChange={onSearchChange}
             />
             <select name="filter" onChange={onCategoryChange}>
-                <option value="All">All poduct</option>
+                <option value="All">All Product</option>
                 <option value="bronzer">Bronzer</option>
                 <option value="blush">Blush</option>
                 <option value="lip_liner">Lip liner</option>

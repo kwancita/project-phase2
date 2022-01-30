@@ -1,0 +1,3 @@
+get http://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline
+###
+get http://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline/495
